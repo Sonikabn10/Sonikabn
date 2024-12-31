@@ -133,14 +133,15 @@ next_state = current_state;
       if (fetch_address >= (matrix_size * matrix_size) / 2) begin
           next_state = FETCH_NEXT_MATRIX_SIZE;
                 end
+      if(done)begin
+          next_state = IDLE;
+                end
             end
             
   FETCH_NEXT_MATRIX_SIZE: begin
   // Continue to the next matrix by fetching the size
           next_state = FETCH_SIZE;
-          if(done)begin
-          next_state<= IDLE;
-                end
+          
                 
           end
   
@@ -174,6 +175,10 @@ next_state = current_state;
                 data1 <= input_sram_read_data[7:0];
                 data2 <= input_sram_read_data[15:8];
                 fetch_address <= fetch_address + 1;  // incrementing the address pointer
+                if(input_sram_read_data==FFFF)begin
+                done<=1;
+                end
+                
                 end
            
             
@@ -187,16 +192,11 @@ next_state = current_state;
                 fetch_address = (matrix_size * matrix_size) / 2 - 1; // Next matrix address is stored here
                 matrix_counter = matrix_counter + 1; // Increment the matrix counter
 
-                if(input_sram_read_data==FFFF)begin
-                done<=1;
                 end
-                
-               
-            end
             
             
             default: begin
-                next_state = INIT;
+                next_state = IDLE;
             end
 
 
