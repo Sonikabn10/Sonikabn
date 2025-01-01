@@ -59,6 +59,8 @@ module tb_top();
   wire [15:0]     input_sram_write_data          ;
   wire [11:0]     input_sram_read_address        ; 
   wire [15:0]     input_sram_read_data           ;
+  wire [7:0]      data1;
+  wire [7:0]      data2;
   //------------------ scratchpad sram --------------------------------------------
   wire            scratchpad_sram_write_enable    ;
   wire [11:0]     scratchpad_sram_write_addresss  ;
@@ -88,6 +90,7 @@ module tb_top();
           .read_data    ( input_sram_read_data         ),
 	  .reset        ( reset_b		       ),
           .clock        ( clk                          )
+          
          );
 		 
   //sram for weights
@@ -151,6 +154,8 @@ module tb_top();
           .input_sram_write_data          (input_sram_write_data        ),
           .input_sram_read_address        (input_sram_read_address      ),
           .input_sram_read_data           (input_sram_read_data         ),
+          .data1                          (data1),
+          .data2                          (data2),
 
 //---------------------------------------------------------------------------
 //Output SRAM interface

@@ -1,7 +1,6 @@
 m255
 K4
 z2
-!s99 nomlopt
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -9,85 +8,75 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/mnt/ncsudrive/s/sbangal5/Goal2025/Sonikabn/Interview_prep/Verilog/projectFall2022/run
-T_opt
-!s110 1735198389
-VCD9_5ENV>^kGZU90ZQ[jA3
-04 6 4 work tb_top fast 0
-=1-000ae431a4f1-676d06b4-131fa-28a4d
-!s124 OEM100
-o-quiet -auto_acc_if_foreign -work work +acc
-Z1 tCvgOpt 0
-n@_opt
-OE;O;2021.2;73
+Z0 d/mnt/ncsudrive/s/sbangal5/Goal2025/Sonikabn/Sonikabn-1/Interview_prep/Verilog/projectFall2022/run
 vMyDesign
-Z2 !s110 1735198349
+Z1 !s110 1735710361
 !i10b 1
-!s100 zIod57TeL5]TPN0eGKY<B0
-IQ^OI9ZD5TYnbz=a>Ra6kV0
+!s100 oI:6nV^[a_R`bG0=L0hhU2
+IhC[Xck9WUGEJAMZlK[i^[3
 R0
-w1735198329
+w1735710355
 8../rtl/dut.v
 F../rtl/dut.v
 !i122 0
-L0 1 51
-Z3 VDg1SIo80bB@j0V0VzS_@n1
-Z4 OE;L;2021.2;73
+L0 1 218
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 OE;L;2021.2;73
 r1
 !s85 0
 31
-Z5 !s108 1735198348.000000
-Z6 !s107 ../testbench/sram.sv|../testbench/testbench.sv|../rtl/dut.v|
-Z7 !s90 ../rtl/dut.v|../testbench/testbench.sv|
+Z4 !s108 1735710360.000000
+!s107 ../testbench/sram.sv|../testbench/testbench.sv|../rtl/dut.v|
+Z5 !s90 ../rtl/dut.v|../testbench/testbench.sv|
 !i113 0
-Z8 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R1
+Z6 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z7 tCvgOpt 0
 n@my@design
 vsram
-Z9 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-R2
+Z8 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R1
 !i10b 1
 !s100 nkaXOmI6C99c=We?bHdcM1
 ITFCfhg3Q0VCcLKSDBH=z10
 S1
 R0
-Z10 w1735193610
+w1735646567
 8../testbench/sram.sv
 F../testbench/sram.sv
 !i122 0
 L0 4 91
+R2
 R3
-R4
 r1
 !s85 0
 31
+R4
+Z9 !s107 ../testbench/sram.sv|../testbench/testbench.sv|../rtl/dut.v|
 R5
+!i113 0
 R6
 R7
-!i113 0
+vtb_top
 R8
 R1
-vtb_top
-R9
-R2
 !i10b 1
-!s100 clDW57WzAg=NMRlOCK9H^3
-I2nFM;OOWa]NCl4NJcTKch2
+!s100 >9Z>W507iYKSELOzXI;^01
+I:7=lOU:z_Nn49l<]1D:`K3
 S1
 R0
-R10
+w1735700302
 8../testbench/testbench.sv
 F../testbench/testbench.sv
 !i122 0
-L0 2 351
+L0 2 356
+R2
 R3
-R4
 r1
 !s85 0
 31
+R4
+R9
 R5
+!i113 0
 R6
 R7
-!i113 0
-R8
-R1
