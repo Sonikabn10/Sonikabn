@@ -10,22 +10,22 @@ z2
 cModel Technology
 Z0 d/mnt/ncsudrive/s/sbangal5/Goal2025/Sonikabn/Sonikabn-1/Interview_prep/Verilog/projectFall2022/run
 vMyDesign
-Z1 !s110 1735710361
+Z1 !s110 1735762858
 !i10b 1
-!s100 oI:6nV^[a_R`bG0=L0hhU2
-IhC[Xck9WUGEJAMZlK[i^[3
+!s100 ]Uff4]]cKE5RTMg[03U>m2
+Ie60SFgDSo=5GPl;hg1_=E2
 R0
-w1735710355
+w1735762805
 8../rtl/dut.v
 F../rtl/dut.v
 !i122 0
-L0 1 218
+L0 1 211
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 OE;L;2021.2;73
 r1
 !s85 0
 31
-Z4 !s108 1735710360.000000
+Z4 !s108 1735762857.000000
 !s107 ../testbench/sram.sv|../testbench/testbench.sv|../rtl/dut.v|
 Z5 !s90 ../rtl/dut.v|../testbench/testbench.sv|
 !i113 0

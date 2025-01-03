@@ -42,13 +42,7 @@ output reg [7:0] data2,
 
 );
 
-//parameter A=2'b00;
-//parameter B=2'b01;
-//reg Size_N;
 
-
-//reg current_state;
-//reg next_state;
   //YOUR CODE HERE
 //always@(posedge clk or posedge reset_b) begin//(@posedge clk)
   //input_sram_read_address <= 'b11;
@@ -84,11 +78,11 @@ else if(!input_sram_write_enable && input_sram_read_address== (((Size_N*Size_N)/
 
 //state declarations
     
-parameter IDLE = 3'b000;
-parameter FETCH_SIZE = 3'b001;
-parameter FETCH_DATA = 3'b010;
-parameter FETCH_NEXT_MATRIX_SIZE = 3'b011;
-parameter WAIT = 3'b100;
+parameter IDLE = 2'b00;
+parameter FETCH_SIZE = 2'b01;
+parameter FETCH_DATA = 2'b10;
+parameter FETCH_NEXT_MATRIX_SIZE = 2'b11;
+
 
     
 reg current_state, next_state;
@@ -96,7 +90,7 @@ reg [15:0] matrix_size; // Matrix size (NxN) cant be more than 64-16bits
 reg [7:0] fetch_address; // address pointer
 reg matrix_counter; // Matrix counter 
 reg done; //flag to mark the completion of data fetching from input sram
-//reg final_data[15:0];
+reg size_check;
     
 // State transitions from current_state to next_state
 always @(posedge clk or posedge reset_b) begin
@@ -108,6 +102,7 @@ always @(posedge clk or posedge reset_b) begin
       input_sram_write_enable <= 'b0;
       dut_busy<=0;
       done <= 0;
+      size_check<=0;
       end 
   else begin
       current_state <= next_state;
@@ -120,13 +115,17 @@ always @(posedge clk) begin
 next_state = current_state;
   case (current_state)
   IDLE: begin
-        if (dut_busy) begin
+        dut_busy<=0;
+        if (dut_run) begin
+        dut_busy<=1;
         next_state = FETCH_SIZE;
         end
         end
             
   FETCH_SIZE: begin
+              if(size_check!=0)begin
               next_state = FETCH_DATA;
+              end
               end
             
   FETCH_DATA: begin
@@ -150,9 +149,8 @@ next_state = current_state;
   
   
   
-  default: begin
-        next_state = IDLE;
-            end
+  default: next_state = IDLE;
+            
         endcase
     end
 
@@ -162,14 +160,20 @@ next_state = current_state;
   next_state = current_state;
   case (current_state) 
     IDLE: begin
-      dut_busy= 1;
+      dut_busy<= 0;
+      input_sram_write_enable<=0;
+      data1<=0;
+      data2<=0;
           end
             
             
     FETCH_SIZE: begin
     if(!input_sram_write_enable)begin       
     input_sram_read_address<=fetch_address;
-    matrix_size= input_sram_read_data;// Assuming the size is stored here
+    matrix_size <= input_sram_read_data;// Assuming the size is stored here
+    if(matrix_size!=0)begin
+      size_check=1;
+    end
                end
     end
             
@@ -180,7 +184,7 @@ next_state = current_state;
                 data1 <= input_sram_read_data[7:0];
                 data2 <= input_sram_read_data[15:8];
                 fetch_address <= fetch_address + 1;  // incrementing the address pointer
-                if(input_sram_read_data=="FFFF")begin
+                if(input_sram_read_data== 16'hFFFF)begin
                 done<=1;
                 end
                 
@@ -201,19 +205,12 @@ next_state = current_state;
             
             
             default: begin
-                dut_busy=0;
+                dut_busy<=0;
+                data1<=0;
+                data2<=0;
             
             end
-
-
-
-  endcase
+endcase
 end    
-    
-
-
-
-
-
 endmodule
 
