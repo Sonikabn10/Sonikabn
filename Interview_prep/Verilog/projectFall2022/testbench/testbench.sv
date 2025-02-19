@@ -198,7 +198,7 @@ module tb_top();
     #1;
     //if($test$plusargs("CLASS"))
     //begin
-    //  $value$plusargs("CLASS=%s",class_name);
+    //  $value$plusargs("CLASS=%s",class_name);// parallel thread-checking arguments passed to the test
     //  //$getstr$plusargs("CLASS=",class_name);
     //end
     if(!$value$plusargs("CLASS=%s",class_name)) class_name = "464";
@@ -208,8 +208,8 @@ module tb_top();
     $display("+CLASS+%s",class_name);
     $display("+RUN_TYPE+%s",run_type);
 
-    repeat (5) @(posedge clk);
-    ->simulationStart;
+    repeat (5) @(posedge clk);//wiating for 5clock cycles
+    ->simulationStart;//-> means trigging the event
   end
   
 		 
@@ -236,13 +236,13 @@ module tb_top();
       weight_mem.loadInitFile($sformatf("../%s/input_%0d/weight_sram_%s.dat",class_name,j,class_name));
 
       repeat(5) @(posedge clk);
-      wait(dut_busy==0);
+      wait(dut_busy==0);//set in design dut_
       @(posedge clk);
       dut_run=1; // DUT starts computing
       //->computeStart[j];
       ->computeStart;
       $display("-------------------------------Round %0d start-------------------------------\n",j);
-      wait(dut_busy==1);
+      wait(dut_busy==1);// set in design as dut_busy-->1
       @(posedge clk);
       dut_run=0;
       wait(dut_busy==0);

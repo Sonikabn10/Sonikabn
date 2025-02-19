@@ -115,10 +115,13 @@ always @(posedge clk) begin
 next_state = current_state;
   case (current_state)
   IDLE: begin
-        dut_busy<=0;
         if (dut_run) begin
-        dut_busy<=1;
+        dut_busy = 1;
+        if(dut_busy==1)begin
         next_state = FETCH_SIZE;
+        end
+        else
+        next_state = IDLE;
         end
         end
             
@@ -160,7 +163,7 @@ next_state = current_state;
   next_state = current_state;
   case (current_state) 
     IDLE: begin
-      dut_busy<= 0;
+      //dut_busy<= 0;
       input_sram_write_enable<=0;
       data1<=0;
       data2<=0;
@@ -205,7 +208,7 @@ next_state = current_state;
             
             
             default: begin
-                dut_busy<=0;
+                //dut_busy<=0;
                 data1<=0;
                 data2<=0;
             

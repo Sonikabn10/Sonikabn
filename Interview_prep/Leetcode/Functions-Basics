@@ -1,0 +1,89 @@
+// Functions
+#include <iostream>
+using namespace std;
+
+/*what is a function?
+>A block of code which performs a certain task which can be reused by invoking the function.
+>Main function is the only function that does not require invoking.
+>Execution starts from the first line of the function and ends where there is a return value or the end of the function. 
+>C++ is compliled and executed from top to bottom in a procedural manner. Hence compile time error/ build error (function identifier not found) is shown if a function is not defined/ declared before it is invoked in the main function
+
+
+What is function declaration and function definition?
+>Declaration gives your compiler info about your function. It has to be declared before the start of your main function.
+
+Ex: void functionintro(int age, string city);
+
+Definition can be done anywhere in the code and if defined before the main function, the function does not need to be declared in the start. 
+Ex: void function intro(int age, string city){
+cout<<"My age is"<<age<<endl;
+cout<<"My city is"<<city<<endl;
+
+}
+
+What are paramters and arguments?
+If there are specific varibales that have to used in a function to perform a particular task, these are declared as parameters while defining/declaring a function.
+While invoking these functions, the values that are given to these arguments are called arguments.
+
+NOTE: Argument names while invoking a function need not be the same as the one in the function definition.
+
+What are default arguments?
+If a variable doesnt have a value declared during invoking that function, those variables are specified with default values while defining these parameters.
+NOTE: If you mention a default value for a parameter which is inbetween a list, an error which says default argument not at the end of the list. 
+The end of the list varibale should always have a default value if a default value is given to any parameter in the function definition.
+The function argument cannot be left empty for any parameter without a default value. An error will be thrown/ build error.
+*/
+
+//Example code for a function
+//Example1:
+void name(string name, int age);//function declaration.
+int main() {
+    cout<<"THIS IS THE MAIN FUNCTION\n";
+    name("Lola",24);
+
+    
+}
+
+void name(string name, int age){
+    cout<<"My name is:"<<name<<"\n";
+    cout<<"My age is:"<<age<<endl;
+}
+
+output:THIS IS THE MAIN FUNCTION
+My name is:Lola
+My age is:24
+
+
+
+//Example 2:
+//void name(string name, int age=0);//function declaration.
+void display(string name, int age=0){
+    cout<<"My name is:"<<name<<"\n";
+    if(age!=0)
+    cout<<"My age is:"<<age<<endl;
+}
+int main() {
+    cout<<"THIS IS THE MAIN FUNCTION\n";
+    string name1;
+    int age1;
+    cout<<"Enter your name:";
+    cin>> name1;
+    cout<<"Enter your age:";
+    cin>> age1;
+    //name("Lola");
+    display(name1,age1);
+    
+    //extraction operator>>used to extract data out of the variable-used in cin
+    //insertion operator << used to insert data into the variable -used in cout
+output:
+THIS IS THE MAIN FUNCTION
+Enter your name:Lola
+Enter your age:24
+My name is:Lola
+My age is:24
+// \n:newline, character, occupies memory space, flushes the output buffer at the end of the program, used when many output values have to be executed
+// endl: newline, manipulator, occupies no memory space, flushes the output buffer immediately, used for immediate execution
+
+    
+}
+

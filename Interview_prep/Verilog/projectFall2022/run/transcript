@@ -1,4 +1,4 @@
-# //  ModelSim SE 2021.2 Apr 14 2021 Linux 4.18.0-553.33.1.el8_10.x86_64
+# //  ModelSim SE 2021.2 Apr 14 2021 Linux 4.18.0-553.34.1.el8_10.x86_64
 # //
 # //  Copyright 1991-2021 Mentor Graphics Corporation
 # //  All Rights Reserved.
@@ -12,11 +12,10 @@
 # //  18 U.S.C. Section 1905.
 # //
 # vsim -voptargs="+acc" tb_top "+CLASS=564" "+TIMEOUT=1000000" "+ROUNDS=2" 
-# Start time: 02:33:06 on Dec 26,2024
+# Start time: 18:50:30 on Jan 17,2025
 # ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: ../testbench/testbench.sv(139): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 25, found 24.
-# ** Warning: ../testbench/testbench.sv(139): (vopt-2718) [TFMPC] - Missing connection for port 'x'.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# ** Warning: ../rtl/dut.v(175): (vopt-2182) 'fetch_address' might be read before written in always_comb or always @* block.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
 # Loading work.tb_top(fast)
 # Loading work.sram(fast)
@@ -25,35 +24,1107 @@
 # Loading work.sram(fast__3)
 # Loading work.MyDesign(fast)
 add wave -position insertpoint  \
-sim:/tb_top/dut/dut_run \
-sim:/tb_top/dut/dut_busy \
-sim:/tb_top/dut/reset_b \
-sim:/tb_top/dut/clk \
-sim:/tb_top/dut/input_sram_write_enable \
-sim:/tb_top/dut/input_sram_write_addresss \
-sim:/tb_top/dut/input_sram_write_data \
-sim:/tb_top/dut/input_sram_read_address \
-sim:/tb_top/dut/input_sram_read_data \
-sim:/tb_top/dut/x \
-sim:/tb_top/dut/output_sram_write_enable \
-sim:/tb_top/dut/output_sram_write_addresss \
-sim:/tb_top/dut/output_sram_write_data \
-sim:/tb_top/dut/output_sram_read_address \
-sim:/tb_top/dut/output_sram_read_data \
-sim:/tb_top/dut/scratchpad_sram_write_enable \
-sim:/tb_top/dut/scratchpad_sram_write_addresss \
-sim:/tb_top/dut/scratchpad_sram_write_data \
-sim:/tb_top/dut/scratchpad_sram_read_address \
-sim:/tb_top/dut/scratchpad_sram_read_data \
-sim:/tb_top/dut/weights_sram_write_enable \
-sim:/tb_top/dut/weights_sram_write_addresss \
-sim:/tb_top/dut/weights_sram_write_data \
-sim:/tb_top/dut/weights_sram_read_address \
-sim:/tb_top/dut/weights_sram_read_data
-run 20000ns
+sim:/tb_top/CLK_PHASE \
+sim:/tb_top/ADDR_464 \
+sim:/tb_top/MAX_ROUNDS \
+sim:/tb_top/computeCycle \
+sim:/tb_top/computeStart \
+sim:/tb_top/computeEnd \
+sim:/tb_top/checkFinish \
+sim:/tb_top/startTime \
+sim:/tb_top/endTime \
+sim:/tb_top/simulationStart \
+sim:/tb_top/class_name \
+sim:/tb_top/run_type \
+sim:/tb_top/rounds \
+sim:/tb_top/timeout \
+sim:/tb_top/num_results \
+sim:/tb_top/correctResult \
+sim:/tb_top/result_array \
+sim:/tb_top/golden_result_array \
+sim:/tb_top/i \
+sim:/tb_top/j \
+sim:/tb_top/k \
+sim:/tb_top/q \
+sim:/tb_top/p \
+sim:/tb_top/clk \
+sim:/tb_top/reset_b \
+sim:/tb_top/dut_run \
+sim:/tb_top/dut_busy \
+sim:/tb_top/output_sram_write_enable \
+sim:/tb_top/output_sram_write_addresss \
+sim:/tb_top/output_sram_write_data \
+sim:/tb_top/output_sram_read_address \
+sim:/tb_top/output_sram_read_data \
+sim:/tb_top/input_sram_write_enable \
+sim:/tb_top/input_sram_write_addresss \
+sim:/tb_top/input_sram_write_data \
+sim:/tb_top/input_sram_read_address \
+sim:/tb_top/input_sram_read_data \
+sim:/tb_top/data1 \
+sim:/tb_top/data2 \
+sim:/tb_top/scratchpad_sram_write_enable \
+sim:/tb_top/scratchpad_sram_write_addresss \
+sim:/tb_top/scratchpad_sram_write_data \
+sim:/tb_top/scratchpad_sram_read_address \
+sim:/tb_top/scratchpad_sram_read_data \
+sim:/tb_top/weights_sram_write_enable \
+sim:/tb_top/weights_sram_write_addresss \
+sim:/tb_top/weights_sram_write_data \
+sim:/tb_top/weights_sram_read_address \
+sim:/tb_top/weights_sram_read_data
+# (vsim-4027) Logging is not supported for Associative Array item: /tb_top/result_array
+# (vsim-4027) Logging is not supported for Associative Array item: /tb_top/golden_result_array
+run 2000ns
 # +CLASS+564
 # +RUN_TYPE+extra
 # -------------------------------start_simulation-------------------------------
 # 
 # INFO::tb_top.input_mem.loadInitFile::readmem : ../564/input_0/input_sram_564.dat 
 # INFO::tb_top.weight_mem.loadInitFile::readmem : ../564/input_0/weight_sram_564.dat 
+# -------------------------------Round 0 start-------------------------------
+# 
+# -------------------------------Round 0 check start-------------------------------
+# 
+# -------------------------------store results to g_result.dat-------------------------------
+# 
+# ** Warning: ** Warning: (vsim-PLI-3887) Key "0" is not a valid key for this associative array.    : ../testbench/testbench.sv(306)
+#    Time: 725 ns  Iteration: 1  Instance: /tb_top
+# -------------------------------load results to output_array-------------------------------
+# 
+# ** Warning: (vsim-PLI-8707) No address specified on line 1 of file "input_0/result.dat" 
+# while loading into associative array using readmem command.    : ../testbench/testbench.sv(314)
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top
+# -------------------------------load results to golden_output_array-------------------------------
+# 
+# INFO::tb_top::readmem : ../564/input_0/golden_outputs_564.dat 
+# -------------------------------Round 0 start compare -------------------------------
+# 
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          0]:    x	!= golden_result_array[          0]:16896
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          1]:    x	!= golden_result_array[          1]:   95
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          2]:    x	!= golden_result_array[          2]:32532
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          3]:    x	!= golden_result_array[          3]:32606
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          4]:    x	!= golden_result_array[          4]:  637
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          5]:    x	!= golden_result_array[          5]:31359
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          6]:    x	!= golden_result_array[          6]:32639
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          7]:    x	!= golden_result_array[          7]:32512
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          8]:    x	!= golden_result_array[          8]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          9]:    x	!= golden_result_array[          9]:22551
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         10]:    x	!= golden_result_array[         10]:32512
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         11]:    x	!= golden_result_array[         11]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         12]:    x	!= golden_result_array[         12]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         13]:    x	!= golden_result_array[         13]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         14]:    x	!= golden_result_array[         14]: 7759
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         15]:    x	!= golden_result_array[         15]:32632
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         16]:    x	!= golden_result_array[         16]: 8831
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         17]:    x	!= golden_result_array[         17]:  113
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         18]:    x	!= golden_result_array[         18]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         19]:    x	!= golden_result_array[         19]:  127
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         20]:    x	!= golden_result_array[         20]:  127
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         21]:    x	!= golden_result_array[         21]:15872
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         22]:    x	!= golden_result_array[         22]:32512
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         23]:    x	!= golden_result_array[         23]:  637
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         24]:    x	!= golden_result_array[         24]:14336
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         25]:    x	!= golden_result_array[         25]:   58
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         26]:    x	!= golden_result_array[         26]:  102
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         27]:    x	!= golden_result_array[         27]:32561
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         28]:    x	!= golden_result_array[         28]:15370
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         29]:    x	!= golden_result_array[         29]:26368
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         30]:    x	!= golden_result_array[         30]:    3
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         31]:    x	!= golden_result_array[         31]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         32]:    x	!= golden_result_array[         32]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         33]:    x	!= golden_result_array[         33]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         34]:    x	!= golden_result_array[         34]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         35]:    x	!= golden_result_array[         35]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         36]:    x	!= golden_result_array[         36]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         37]:    x	!= golden_result_array[         37]:    8
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         38]:    x	!= golden_result_array[         38]: 2329
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         39]:    x	!= golden_result_array[         39]: 5920
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         40]:    x	!= golden_result_array[         40]: 9087
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         41]:    x	!= golden_result_array[         41]: 4638
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         42]:    x	!= golden_result_array[         42]:25344
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         43]:    x	!= golden_result_array[         43]:13087
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         44]:    x	!= golden_result_array[         44]:16158
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         45]:    x	!= golden_result_array[         45]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         46]:    x	!= golden_result_array[         46]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         47]:    x	!= golden_result_array[         47]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         48]:    x	!= golden_result_array[         48]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         49]:    x	!= golden_result_array[         49]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         50]:    x	!= golden_result_array[         50]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         51]:    x	!= golden_result_array[         51]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         52]:    x	!= golden_result_array[         52]:   26
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         53]:    x	!= golden_result_array[         53]: 2318
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         54]:    x	!= golden_result_array[         54]: 6405
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         55]:    x	!= golden_result_array[         55]:16687
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         56]:    x	!= golden_result_array[         56]:32567
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         57]:    x	!= golden_result_array[         57]:23620
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         58]:    x	!= golden_result_array[         58]:32639
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         59]:    x	!= golden_result_array[         59]: 5942
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         60]:    x	!= golden_result_array[         60]:18200
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         61]:    x	!= golden_result_array[         61]:16163
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         62]:    x	!= golden_result_array[         62]:   52
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         63]:    x	!= golden_result_array[         63]:15723
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         64]:    x	!= golden_result_array[         64]:  101
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         65]:    x	!= golden_result_array[         65]:   67
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         66]:    x	!= golden_result_array[         66]:11776
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         67]:    x	!= golden_result_array[         67]:27464
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         68]:    x	!= golden_result_array[         68]: 5671
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         69]:    x	!= golden_result_array[         69]:32541
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         70]:    x	!= golden_result_array[         70]:26428
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         71]:    x	!= golden_result_array[         71]:26239
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         72]:    x	!= golden_result_array[         72]:12579
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         73]:    x	!= golden_result_array[         73]:21375
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         74]:    x	!= golden_result_array[         74]:26212
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         75]:    x	!= golden_result_array[         75]:32639
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         76]:    x	!= golden_result_array[         76]:32639
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         77]:    x	!= golden_result_array[         77]:32639
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         78]:    x	!= golden_result_array[         78]:32639
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         79]:    x	!= golden_result_array[         79]:32639
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         80]:    x	!= golden_result_array[         80]:32639
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         81]:    x	!= golden_result_array[         81]:32639
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         82]:    x	!= golden_result_array[         82]:32575
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         83]:    x	!= golden_result_array[         83]:28688
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         84]:    x	!= golden_result_array[         84]:32639
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         85]:    x	!= golden_result_array[         85]:18504
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         86]:    x	!= golden_result_array[         86]:  127
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         87]:    x	!= golden_result_array[         87]:16708
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         88]:    x	!= golden_result_array[         88]: 3840
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         89]:    x	!= golden_result_array[         89]:32639
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         90]:    x	!= golden_result_array[         90]:  109
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         91]:    x	!= golden_result_array[         91]:   95
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         92]:    x	!= golden_result_array[         92]:30248
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         93]:    x	!= golden_result_array[         93]: 6912
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         94]:    x	!= golden_result_array[         94]:32603
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         95]:    x	!= golden_result_array[         95]:16966
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         96]:    x	!= golden_result_array[         96]:   61
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         97]:    x	!= golden_result_array[         97]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         98]:    x	!= golden_result_array[         98]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         99]:    x	!= golden_result_array[         99]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        100]:    x	!= golden_result_array[        100]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        101]:    x	!= golden_result_array[        101]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        102]:    x	!= golden_result_array[        102]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        103]:    x	!= golden_result_array[        103]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        104]:    x	!= golden_result_array[        104]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        105]:    x	!= golden_result_array[        105]:12352
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        106]:    x	!= golden_result_array[        106]:12390
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        107]:    x	!= golden_result_array[        107]:  118
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        108]:    x	!= golden_result_array[        108]:19064
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        109]:    x	!= golden_result_array[        109]:25471
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        110]:    x	!= golden_result_array[        110]:   89
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        111]:    x	!= golden_result_array[        111]:12302
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        112]:    x	!= golden_result_array[        112]:32626
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        113]:    x	!= golden_result_array[        113]:32575
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        114]:    x	!= golden_result_array[        114]: 1343
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        115]:    x	!= golden_result_array[        115]:23398
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        116]:    x	!= golden_result_array[        116]: 8506
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        117]:    x	!= golden_result_array[        117]:22549
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        118]:    x	!= golden_result_array[        118]:10879
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        119]:    x	!= golden_result_array[        119]:17535
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        120]:    x	!= golden_result_array[        120]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        121]:    x	!= golden_result_array[        121]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        122]:    x	!= golden_result_array[        122]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        123]:    x	!= golden_result_array[        123]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        124]:    x	!= golden_result_array[        124]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        125]:    x	!= golden_result_array[        125]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        126]:    x	!= golden_result_array[        126]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        127]:    x	!= golden_result_array[        127]:  127
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        128]:    x	!= golden_result_array[        128]:30079
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        129]:    x	!= golden_result_array[        129]:32639
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        130]:    x	!= golden_result_array[        130]:32639
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        131]:    x	!= golden_result_array[        131]:32639
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        132]:    x	!= golden_result_array[        132]:32639
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        133]:    x	!= golden_result_array[        133]:27404
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        134]:    x	!= golden_result_array[        134]:30335
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        135]:    x	!= golden_result_array[        135]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        136]:    x	!= golden_result_array[        136]:16640
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        137]:    x	!= golden_result_array[        137]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        138]:    x	!= golden_result_array[        138]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        139]:    x	!= golden_result_array[        139]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        140]:    x	!= golden_result_array[        140]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        141]:    x	!= golden_result_array[        141]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 825 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[        142]:    x	!= golden_result_array[        142]:    0
+# -------------------------------Round 0 Your report-------------------------------
+# 
+# Check 1 : Correct g results = 0/143
+# computeCycle=2
+# ---------------------------------------------------------------------------------
+# 
+# INFO::tb_top.input_mem.loadInitFile::readmem : ../564/input_1/input_sram_564.dat 
+# INFO::tb_top.weight_mem.loadInitFile::readmem : ../564/input_1/weight_sram_564.dat 
+# -------------------------------Round 1 start-------------------------------
+# 
+# -------------------------------Round 1 check start-------------------------------
+# 
+# -------------------------------store results to g_result.dat-------------------------------
+# 
+# ** Warning: ** Warning: (vsim-PLI-3887) Key "0" is not a valid key for this associative array.    : ../testbench/testbench.sv(306)
+#    Time: 1015 ns  Iteration: 1  Instance: /tb_top
+# -------------------------------load results to output_array-------------------------------
+# 
+# ** Warning: (vsim-PLI-8707) No address specified on line 1 of file "input_1/result.dat" 
+# while loading into associative array using readmem command.    : ../testbench/testbench.sv(314)
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top
+# -------------------------------load results to golden_output_array-------------------------------
+# 
+# INFO::tb_top::readmem : ../564/input_1/golden_outputs_564.dat 
+# -------------------------------Round 1 start compare -------------------------------
+# 
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          0]:    x	!= golden_result_array[          0]:   34
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          1]:    x	!= golden_result_array[          1]:10496
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          2]:    x	!= golden_result_array[          2]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          3]:    x	!= golden_result_array[          3]:   13
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          4]:    x	!= golden_result_array[          4]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          5]:    x	!= golden_result_array[          5]:10025
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          6]:    x	!= golden_result_array[          6]: 2560
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          7]:    x	!= golden_result_array[          7]: 4944
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          8]:    x	!= golden_result_array[          8]:19494
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[          9]:    x	!= golden_result_array[          9]:26390
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         10]:    x	!= golden_result_array[         10]:17499
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         11]:    x	!= golden_result_array[         11]:19236
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         12]:    x	!= golden_result_array[         12]: 5419
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         13]:    x	!= golden_result_array[         13]:   82
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         14]:    x	!= golden_result_array[         14]:29440
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         15]:    x	!= golden_result_array[         15]:   77
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         16]:    x	!= golden_result_array[         16]:  313
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         17]:    x	!= golden_result_array[         17]:20080
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         18]:    x	!= golden_result_array[         18]:11103
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         19]:    x	!= golden_result_array[         19]:18945
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         20]:    x	!= golden_result_array[         20]:23124
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         21]:    x	!= golden_result_array[         21]:    1
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         22]:    x	!= golden_result_array[         22]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         23]:    x	!= golden_result_array[         23]:10240
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         24]:    x	!= golden_result_array[         24]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         25]:    x	!= golden_result_array[         25]:  127
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         26]:    x	!= golden_result_array[         26]:   77
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         27]:    x	!= golden_result_array[         27]:13159
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         28]:    x	!= golden_result_array[         28]:32539
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         29]:    x	!= golden_result_array[         29]:32512
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         30]:    x	!= golden_result_array[         30]:21248
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         31]:    x	!= golden_result_array[         31]: 3360
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         32]:    x	!= golden_result_array[         32]:   98
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         33]:    x	!= golden_result_array[         33]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         34]:    x	!= golden_result_array[         34]:14377
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         35]:    x	!= golden_result_array[         35]:  768
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         36]:    x	!= golden_result_array[         36]:14643
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         37]:    x	!= golden_result_array[         37]: 4956
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         38]:    x	!= golden_result_array[         38]:21106
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         39]:    x	!= golden_result_array[         39]:21538
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         40]:    x	!= golden_result_array[         40]:32595
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         41]:    x	!= golden_result_array[         41]:32588
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         42]:    x	!= golden_result_array[         42]:26404
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         43]:    x	!= golden_result_array[         43]:17920
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         44]:    x	!= golden_result_array[         44]:20607
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         45]:    x	!= golden_result_array[         45]:32639
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         46]:    x	!= golden_result_array[         46]:24125
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         47]:    x	!= golden_result_array[         47]:28672
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         48]:    x	!= golden_result_array[         48]: 1836
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         49]:    x	!= golden_result_array[         49]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         50]:    x	!= golden_result_array[         50]:   37
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         51]:    x	!= golden_result_array[         51]: 6144
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         52]:    x	!= golden_result_array[         52]:    0
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         53]:    x	!= golden_result_array[         53]:   84
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Process: /tb_top/#INITIAL#296 File: ../testbench/testbench.sv Line: 332
+# ** Warning: (vsim-3829) Non-existent associative array entry. Returning default value.
+#    Time: 1115 ns  Iteration: 1  Instance: /tb_top File: ../testbench/testbench.sv Line: 335
+# result_array[         54]:    x	!= golden_result_array[         54]:    0
+# -------------------------------Round 1 Your report-------------------------------
+# 
+# Check 1 : Correct g results = 0/55
+# computeCycle=2
+# ---------------------------------------------------------------------------------
+# 
+# ** Note: $finish    : ../testbench/testbench.sv(354)
+#    Time: 1125 ns  Iteration: 1  Instance: /tb_top
+# 1
+# Break in Module tb_top at ../testbench/testbench.sv line 354
+# End time: 18:52:09 on Jan 17,2025, Elapsed time: 0:01:39
+# Errors: 0, Warnings: 401
