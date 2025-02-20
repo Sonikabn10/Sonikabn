@@ -1,0 +1,148 @@
+//Problem1:Check if a number is prime number or not
+#include <iostream>
+using namespace std;
+/*NOTE: return statement acts like a break and breaks execution of a function immediately when a return statement is encountered
+/*output:
+The number:23
+PRIME
+The number:4
+NOT PRIME
+
+*/
+
+//using function return statement
+bool primecheck(int n){
+  for(int i=2;i<n;i++){
+      if(n%i==0)
+      return false;
+     
+    }
+    return true;}
+
+int main(){
+    
+   int number;
+   cout<<"The number:";
+   cin>>number;
+   bool prime = primecheck(number);
+   if(prime==true)
+   cout<<"PRIME";
+   if(prime==false)
+   cout<<"NOT PRIME";
+}
+//without using function return statement
+bool primecheck(int n){
+    bool checkflag=true;
+  for(int i=2;i<n;i++){
+      if(n%i==0){
+      checkflag= false;
+      break;
+      }
+    }
+    return checkflag;
+}
+
+int main(){
+    
+   int number;
+   cout<<"The number:";
+   cin>>number;
+   bool prime = primecheck(number);
+   if(prime==true)
+   cout<<"PRIME";
+   if(prime==false)
+   cout<<"NOT PRIME";
+   
+}
+
+
+//without using functions
+int main(){
+    
+   int number;
+   cout<<"The number:";
+   cin>>number;
+   
+   bool checkflag=true;
+  for(int i=2;i<number;i++){
+      if(number%i==0){
+      checkflag= false;
+      break;
+      }
+    }
+   
+   if(checkflag==true)
+   cout<<"PRIME";
+   if(checkflag==false)
+   cout<<"NOT PRIME";
+   
+}
+
+//Problem2: Check all prime numbers between 1 to 1000 using a primecheck function
+bool primecheck(int n){
+    bool checkflag=true;
+  for(int i=2;i<n;i++){
+      if(n%i==0){
+      checkflag= false;
+      break;
+      }
+    }
+    return checkflag;
+}
+
+int main(){
+
+   for(int i=1;i<1000;i++)
+   {
+   bool prime = primecheck(i);
+   if(prime){
+       cout<<"All the prime numbers:\n"<<i<<"\n";
+   }
+   }
+   
+   
+}
+
+
+
+//Problem3: Check all the prime numbers present within a specified number and count the number of prime numbers.
+bool primecheck(int n){
+    bool checkflag=true;
+  for(int i=2;i<n;i++){
+      if(n%i==0){
+      checkflag= false;
+      break;
+      }
+    }
+    return checkflag;
+}
+
+int main(){
+    
+   int number;
+   int primecount=0;
+   cout<<"The number:";
+   cin>>number;
+   for(int i=1;i<=number;i++)
+   {
+   bool prime = primecheck(i);
+   if(prime){
+       cout<<"Prime Numbers"<<i<<"\n";
+       primecount=primecount+1;
+   }
+   
+   }
+   
+   cout<<"The total number of prime numbers are:"<<primecount<<endl;
+}
+
+output:
+The number:13
+Prime Numbers1
+Prime Numbers2
+Prime Numbers3
+Prime Numbers5
+Prime Numbers7
+Prime Numbers11
+Prime Numbers13
+The total number of prime numbers are:7
