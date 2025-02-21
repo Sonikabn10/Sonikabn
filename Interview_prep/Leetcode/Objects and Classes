@@ -1,0 +1,60 @@
+/*What is OOPs?(Object Oriented Programming)
+OOPs allows you to represent real life objects in programming. These objects are represented in terms of attributes and behavior.
+
+What is a class?
+It is a template or a blueprint. A user-defined data type. By default, the members of a class are private and can only be accesed within a class.
+Use access modifer: public to make it accessible outside of the class
+syntax: class <class_name>{
+};
+
+What is an object?
+It is an instance or an example of a class.
+syntax: <class_name> <object_name>;
+>> How can an object of a class access the members of its class?
+syntax: <object_name>.<member_name>=<assign_value>;
+<object_name>.<member_name> is used to access that member of a class and assign or use that members value.
+
+What are attributes and behaviors?
+The properties of a class that are used to describe a class.
+
+
+Example: 
+Class -> Company
+Object -> SBN, S_Agencies
+attributes/behavior -> Name, Employeecount, city, Owner, ProductType, AnnualRevenue, Products, etc
+
+*/
+//usage of a list
+#include <iostream>
+#include <list>
+using namespace std;
+
+class Company{
+public:
+    string Name;
+    int EmployeeCount;
+    string City;
+    string Owner;
+    string ProductType;
+    int AnnualRevenue;
+    list<string>Products;
+};
+
+
+int main() {
+    Company SBN;
+    SBN.Name="SBN";
+    SBN.EmployeeCount=200;
+    SBN.City="California";
+    SBN.Owner="Sonika";
+    SBN.ProductType="Construction";
+    SBN.AnnualRevenue=15000000;
+    SBN.Products= {"Bitumen","Cement","Steel","Sand","Granite"};
+    
+    cout<<"Name of the Company: "<<SBN.Name<<endl;
+    for(string prod:SBN.Products){
+        cout<<prod<<endl;
+    }
+
+
+}

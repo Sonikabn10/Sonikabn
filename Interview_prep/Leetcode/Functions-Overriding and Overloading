@@ -1,0 +1,53 @@
+/*Function Overloading?
+When a group of functions have the same function name and parameters and similar return statements, 
+depending on the datatype of the argument specified while invoking the function, the compiler decides the which function to invoke.
+*/
+Example:
+bool primecheck(bool n){
+    bool checkflag=true;
+  for(int i=2;i<n;i++){
+      if(n%i==0){
+      checkflag= false;
+      break;
+      }
+    }
+    return checkflag;
+}
+int primecheck(int n){
+    bool checkflag=1;
+  for(int i=2;i<n;i++){
+      if(n%i==0){
+      checkflag= 0;
+      break;
+      }
+    }
+    return checkflag;
+}
+
+int main(){
+    
+   int number;
+   int primecount=0;
+   cout<<"The number:";
+   cin>>number;
+   for(int i=1;i<=number;i++)//argument type for i is int
+   {
+   int prime = primecheck(i);//invoking the function with datatype int since the argument type is also int
+   if(prime){
+       cout<<"Prime Numbers"<<i<<"\n";
+       primecount=primecount+1;
+   }
+   
+   }
+   
+   cout<<"The total number of prime numbers are:"<<primecount<<endl;
+}
+/*Function Overriding?
+When there is a new implementation of a user-defined function or a built-in function, that is called function overriding.
+
+
+
+
+
+
+*/

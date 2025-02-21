@@ -1,0 +1,19 @@
+Learning Lists
+Syntax: 
+list<data_type><list_name>; ->declaration
+list<data_type><list_name>={<assign_value1,assign_value2}; ->definition
+
+Use of list in class: inside a class->declaration
+
+how to display?
+for(<data_type_ofthelist><name>:<list_name>){
+    cout<<<name><<endl;
+}
+how to push into the list?
+<object_name>.<class_member>.push_back("value1");
+
+SBN.Products.push_back("sand");
+SBN.Products.push_back("Steel");
+
+SBN.Products.push_front("sand");
+SBN.Products.push_front("Steel");

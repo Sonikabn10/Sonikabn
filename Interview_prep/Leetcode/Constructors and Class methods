@@ -1,0 +1,67 @@
+/*Why do we need class methods and contructors?
+When multiple objects are created, there is a repeatation of the code in order to provide values to these different objects of a code.
+Inorder to avoid repeatation, constructors and class methods are introduced.
+
+What are constructors?
+These are special methods that are invoked each time an object of a specific class is created. 
+Meaning, that method is going to be invoked at the construction of an object of a class.
+
+Rules: 
+1. Same name as the class.
+2. Does not have a return type.
+3.
+4.
+5.
+6.
+7.
+
+
+*/
+//example of a initialization list for a constructor:
+
+
+#include <iostream>
+#include <list>
+using namespace std;
+
+class Company{
+public:
+    string Name;
+    int EmployeeCount;
+    string City;
+    string Owner;
+    string ProductType;
+    int AnnualRevenue;
+    list<string>Products;
+    
+    
+    Company(string name, int employeecount, string owner, list<string>products):Name(name),EmployeeCount(employeecount),Owner(owner), Products(products){
+        
+        AnnualRevenue=0;//default value
+    }
+};
+
+
+int main() {
+    list<string>prod={"steel","sand"};
+    Company SBN("SBN",200,"Sonika",prod);
+    //SBN.Name="SBN";
+    //SBN.EmployeeCount=200;
+    //SBN.City="California";
+    //SBN.Owner="Sonika";
+    //SBN.ProductType="Construction";
+    //SBN.AnnualRevenue=15000000;
+    //SBN.Products= {"Bitumen","Cement","Steel","Sand","Granite"};
+    
+    cout<<"Name of the Company: "<<SBN.Name<<endl;
+    cout<<"Employee Count:"<<SBN.EmployeeCount<<endl;
+    cout<<"Owner:"<<SBN.Owner<<endl;
+    cout<<"Revenue:"<<SBN.AnnualRevenue<<endl;
+    for(string prod:SBN.Products){
+        cout<<prod<<endl;
+    }
+
+
+}
+
+What are class methods?
